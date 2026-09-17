@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6fa;
+    color: #182230;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: min(1100px, 94%);
+    margin: 30px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 44px;
+    margin: 0 0 8px;
+}
+
+header p {
+    color: #667085;
+}
+
+.toolbar,
+.ask-row {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.upload,
+button,
+select {
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 15px;
+}
+
+.upload {
+    background: #111827;
+    color: white;
+    cursor: pointer;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#clearBtn {
+    background: #475467;
+}
+
+select {
+    background: white;
+    border: 1px solid #d0d5dd;
+}
+
+#question {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.workspace {
+    position: relative;
+    min-height: 360px;
+    background: white;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+canvas {
+    max-width: 100%;
+    cursor: crosshair;
+    border-radius: 8px;
+}
+
+#emptyState {
+    color: #98a2b3;
+}
+
+#status {
+    min-height: 25px;
+    margin: 10px 2px;
+}
+
+.answer-card,
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.answer-card {
+    margin-top: 15px;
+}
+
+pre {
+    white-space: pre-wrap;
+    line-height: 1.55;
+    font: inherit;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 10px;
+    margin: 3px;
+    border-radius: 18px;
+    background: #eef2ff;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ask-row {
+        flex-wrap: wrap;
+    }
+
+    #question {
+        flex-basis: 100%;
+    }
+}

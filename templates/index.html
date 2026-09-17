@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionCircle</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+
+    <header>
+        <h1>VisionCircle</h1>
+        <p>
+            Circle anything in an image and ask AI to understand
+            the selected region.
+        </p>
+    </header>
+
+    <div class="toolbar">
+        <label class="upload">
+            Upload Image
+            <input id="fileInput" type="file"
+                   accept="image/*" hidden>
+        </label>
+
+        <select id="mode">
+            <option value="auto">Auto</option>
+            <option value="general_visual">General Visual</option>
+            <option value="text">Text / OCR</option>
+            <option value="location">Landmark / Location</option>
+            <option value="product">Product</option>
+            <option value="food">Food</option>
+            <option value="plant">Plant</option>
+            <option value="animal">Animal</option>
+            <option value="diagram">Diagram</option>
+        </select>
+    </div>
+
+    <div class="workspace">
+        <canvas id="canvas"></canvas>
+        <div id="emptyState">
+            Upload an image to begin.
+        </div>
+    </div>
+
+    <div class="ask-row">
+        <input
+            id="question"
+            value="What is this?"
+            placeholder="Ask about the selected region..."
+        >
+
+        <button id="analyzeBtn" disabled>
+            Analyze
+        </button>
+
+        <button id="clearBtn">
+            Clear
+        </button>
+    </div>
+
+    <div id="status"></div>
+
+    <section class="answer-card">
+        <h2>AI Answer</h2>
+        <pre id="answer">
+Upload an image and draw a circle around something.
+        </pre>
+    </section>
+
+    <section class="grid">
+
+        <div class="card">
+            <h3>Detected Intent</h3>
+            <div id="intent">Auto</div>
+        </div>
+
+        <div class="card">
+            <h3>YOLO Objects</h3>
+            <div id="detections">No analysis yet.</div>
+        </div>
+
+        <div class="card">
+            <h3>OCR</h3>
+            <div id="ocr">No analysis yet.</div>
+        </div>
+
+        <div class="card">
+            <h3>SAM / Segmentation</h3>
+            <div id="segmentation">No analysis yet.</div>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
