@@ -6,29 +6,7 @@ VisionCircle is an interactive multimodal computer-vision application.
 
 A user uploads an image, draws a circle around any region, and asks a question about that selected region.
 
-## 🧠 System Architecture
-               IMAGE
-               ↓
-       User draws a circle
-               ↓
-       Selected Region
-               ↓
-      ┌────────────────┐
-      │ Vision Pipeline │
-      └───────┬────────┘
-              ↓
-      What is selected?
-              ↓
-   ┌──────────┼───────────┐
-   ↓          ↓           ↓
- Object      Text       Scene/Place
-   ↓          ↓           ↓
-Analysis     OCR       Geo/Context
-   └──────────┼───────────┘
-              ↓
-       Multimodal AI
-              ↓
-       Relevant Answer
+
        ---
 ## Why multiple models?
 
