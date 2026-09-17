@@ -6,42 +6,29 @@ VisionCircle is an interactive multimodal computer-vision application.
 
 A user uploads an image, draws a circle around any region, and asks a question about that selected region.
 
-## Architecture
-
-```text
-User Image
-    |
-    v
-Circle / Region Selection
-    |
-    v
-Selected Region
-    |
-    +----> YOLO Object Detection
-    |
-    +----> EasyOCR Text Extraction
-    |
-    +----> SAM 2 Promptable Segmentation
-    |
-    v
-Intent Detection
-    |
-    +---- general visual
-    +---- text
-    +---- product
-    +---- food
-    +---- plant
-    +---- animal
-    +---- landmark/location
-    +---- diagram
-    |
-    v
-Gemini Vision-Language Model
-    |
-    v
-Context-Aware Answer
-```
-
+## 🧠 System Architecture
+             IMAGE
+               ↓
+       User draws a circle
+               ↓
+       Selected Region
+               ↓
+      ┌────────────────┐
+      │ Vision Pipeline │
+      └───────┬────────┘
+              ↓
+      What is selected?
+              ↓
+   ┌──────────┼───────────┐
+   ↓          ↓           ↓
+ Object      Text       Scene/Place
+   ↓          ↓           ↓
+Analysis     OCR       Geo/Context
+   └──────────┼───────────┘
+              ↓
+       Multimodal AI
+              ↓
+       Relevant Answer
 ## Why multiple models?
 
 YOLO is useful for fast predefined object detection.
