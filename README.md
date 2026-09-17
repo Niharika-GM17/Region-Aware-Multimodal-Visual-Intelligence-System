@@ -7,7 +7,7 @@ VisionCircle is an interactive multimodal computer-vision application.
 A user uploads an image, draws a circle around any region, and asks a question about that selected region.
 
 ## 🧠 System Architecture
-             IMAGE
+               IMAGE
                ↓
        User draws a circle
                ↓
@@ -29,6 +29,7 @@ Analysis     OCR       Geo/Context
        Multimodal AI
               ↓
        Relevant Answer
+       ---
 ## Why multiple models?
 
 YOLO is useful for fast predefined object detection.
